@@ -1,26 +1,32 @@
-import React from "react";
 import { render } from "react-dom";
 import Pet from "./Pet";
+import SearchParams from "./SearchParams";
+
+const pets = [
+  {
+    name: "Luna",
+    animal: "dog",
+    breed: "Stafford",
+  },
+  {
+    name: "Chuck",
+    animal: "Dog",
+    breed: "Stafford",
+  },
+  {
+    name: "Cluck",
+    animal: "Dog",
+    breed: "Stafford",
+  },
+];
 
 const App = () => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, "Adopt Me!"),
-    React.createElement(Pet, {
-      name: "Luna",
-      animal: "Dog",
-      breed: "Stafford",
-    }),
-    React.createElement(Pet, {
-      name: "Chuck",
-      animal: "Dog",
-      breed: "Stafford",
-    }),
-    React.createElement(Pet, {
-      name: "Cluck",
-      animal: "Dog",
-      breed: "Stafford",
-    }),
-  ]);
+  return (
+    <div>
+      <h1>Adopt Me!</h1>
+      <SearchParams />
+    </div>
+  );
 };
 
-render(React.createElement(App), document.querySelector("#root"));
+render(<App />, document.querySelector("#root"));
