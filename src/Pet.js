@@ -1,10 +1,17 @@
-const Pet = (props) => {
+const Pet = ({ name, animal, breed, id, images, location, description }) => {
+  const hero = images[0] || "http://pet-images.dev-apis.com/pets/none.jpg";
+
   return (
-    <div>
-      <h1>{props.name}</h1>
-      <h2>{props.animal}</h2>
-      <h2>{props.breed}</h2>
-    </div>
+    <a href={`/details/${id}`} className="pet">
+      <div className="image-container">
+        <img src={hero} alt={name} />
+      </div>
+      <div className="info">
+        <h1>{name}</h1>
+        <h2>{`${animal} - ${breed} - ${location}`}</h2>
+        <p>{description}</p>
+      </div>
+    </a>
   );
 };
 
