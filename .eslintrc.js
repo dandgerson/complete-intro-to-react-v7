@@ -9,6 +9,7 @@ module.exports = {
     "plugin:import/errors",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
     // "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
@@ -24,6 +25,7 @@ module.exports = {
     "react",
     "import",
     "jsx-a11y",
+    "react-hooks",
     // "@typescript-eslint",
   ],
   rules: {
