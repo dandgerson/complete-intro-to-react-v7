@@ -8,7 +8,24 @@ class Carousel extends Component {
   };
 
   render() {
-    return <div>Carousel</div>;
+    const { active } = this.state;
+    const { images } = this.props;
+
+    return (
+      <div className="carousel">
+        <img src={images[active]} alt="animal" />
+        <div className="carousel-smaller">
+          {images.map((image, i) => (
+            <img
+              src={image}
+              alt="animal thumbnail"
+              key={image}
+              className={i === active ? "active" : ""}
+            />
+          ))}
+        </div>
+      </div>
+    );
   }
 }
 
