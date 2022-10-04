@@ -2,7 +2,7 @@ import { Component } from "react";
 import { useParams } from "react-router-dom";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
-import ThemeContext, { useThemeContext } from "./ThemeContext";
+import { ThemeContext, useThemeContext } from "./ThemeContext";
 
 class Details extends Component {
   state = { loading: true };
@@ -31,14 +31,12 @@ class Details extends Component {
           <h1>{name}</h1>
           <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
           <ThemeContext.Consumer>
-            {([theme, setTheme]) => (
+            {([theme]) => (
               <button
                 style={{ backgroundColor: theme }}
-                onClick={() => setTheme("hotpink")}
               >{`Adopt ${name}`}</button>
             )}
           </ThemeContext.Consumer>
-          <button>{`Adopt ${name}`}</button>
           <p>{description}</p>
         </div>
       </div>

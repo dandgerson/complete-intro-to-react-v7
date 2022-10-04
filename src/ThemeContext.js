@@ -1,11 +1,17 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 // const [theme, setTheme] = useState('darkblue')
 
 // just mimicing useState hook
-const ThemeContext = createContext(["brown", () => {}]);
+export const ThemeContext = createContext(["", () => {}]);
 
-export default ThemeContext;
+export const ThemeContextProvider = ({ value, children }) => {
+  const themeState = useState(value);
+
+  return (
+    <ThemeContext.Provider value={themeState}>{children}</ThemeContext.Provider>
+  );
+};
 
 export const useThemeContext = () => {
   const theme = useContext(ThemeContext);

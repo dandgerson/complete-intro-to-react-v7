@@ -35,7 +35,6 @@ const SearchParams = () => {
         onSubmit={(e) => {
           e.preventDefault();
           requestPets();
-          setTheme("brown");
         }}
       >
         <label htmlFor="location">
@@ -93,6 +92,29 @@ const SearchParams = () => {
                 {breed}
               </option>
             ))}
+          </select>
+        </label>
+
+        <label htmlFor="theme">
+          Theme
+          <select
+            name="theme"
+            id="theme"
+            value={theme}
+            onChange={(e) => {
+              setTheme(e.target.value);
+            }}
+            onBlur={(e) => {
+              setTheme(e.target.value);
+            }}
+          >
+            {["brown", "darkblue", "purple", "hotpink", "green"].map(
+              (theme) => (
+                <option key={theme} value={theme}>
+                  {theme}
+                </option>
+              )
+            )}
           </select>
         </label>
 
