@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
-const Modal = ({ clickOutside, children }) => {
+const Modal = ({ clickOutside, renderContent }) => {
   const elRef = useRef(null);
   if (!elRef.current) {
     elRef.current = document.createElement("div");
@@ -24,7 +24,7 @@ const Modal = ({ clickOutside, children }) => {
     };
   }, []);
 
-  return createPortal(<div>{children}</div>, elRef.current);
+  return createPortal(<div>{renderContent()}</div>, elRef.current);
 };
 
 export default Modal;

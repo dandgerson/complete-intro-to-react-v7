@@ -44,15 +44,18 @@ class Details extends Component {
           <p>{description}</p>
 
           {showModal ? (
-            <Modal clickOutside={this.toggleModal}>
-              <div>
-                <h1>Would you like to adopt {name}?</h1>
-                <div className="buttons">
-                  <a href="https://bit.ly/pet-adopt">Yes</a>
-                  <button onClick={this.toggleModal}>No</button>
+            <Modal
+              clickOutside={this.toggleModal}
+              renderContent={() => (
+                <div>
+                  <h1>Would you like to adopt {name}?</h1>
+                  <div className="buttons">
+                    <a href="https://bit.ly/pet-adopt">Yes</a>
+                    <button onClick={this.toggleModal}>No</button>
+                  </div>
                 </div>
-              </div>
-            </Modal>
+              )}
+            />
           ) : null}
         </div>
       </div>
